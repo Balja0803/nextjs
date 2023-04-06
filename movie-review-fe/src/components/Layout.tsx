@@ -1,4 +1,5 @@
 import React, { ReactNode } from "react";
+import Header from "./Header";
 
 type Proptype = {
   children: ReactNode;
@@ -7,7 +8,7 @@ type Proptype = {
 export default function Layout({ children }: Proptype) {
   return (
     <div>
-      {/* header goes here */}
+      <Header />
       <main>{children}</main>
     </div>
   );
