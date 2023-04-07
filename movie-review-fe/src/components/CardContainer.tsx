@@ -20,7 +20,7 @@ export default function CardContainer({ movies }: Proptype): JSX.Element {
   console.log(movies);
   return (
     <>
-      <div className="flex flex-wrap h-300 w-400 gap-30">
+      <div className="flex  h-300 w-400 justify-between mx-auto mt-3 overflow-scroll">
         {movies.map((movie: MovieType, index: number) => (
           <Card movie={movie} key={index} />
         ))}

@@ -1,10 +1,7 @@
-import { useState } from "react";
-
 export default function Header(): JSX.Element {
-  const [dropdown, setDropDown] = useState(false);
   return (
     <>
-      <div className="flex bg-red-500 justify-between p-3 ">
+      <div className="flex bg-red-600 justify-between p-3 max-w-5xl mx-auto ">
         <div>
           <picture>
             <img
@@ -31,44 +28,35 @@ export default function Header(): JSX.Element {
             </ul>
           </div>
           <div className="content-between">
-            <ul className="flex text-white gap-10 ">
-              <li
-                onMouseEnter={() => setDropDown(true)}
-                onMouseLeave={() => setDropDown(false)}
-                id="dropdownHoverButton"
-                data-dropdown-toggle="dropdownHover"
-                data-dropdown-trigger="hover"
-                className="hover:bg-white rounded-t hover:text-black cursor-pointer hover:relative"
-              >
+            <div className="flex text-white gap-10 ">
+              <div className="hover:bg-white rounded-t hover:text-black cursor-pointer relative">
                 MOVIES
-              </li>
+                <div className="w-full bg-white absolute h-2/6 hidden hover:visible">
+                  <ul className="flex justify-between">
+                    <li>Movies in Theatre</li>
+                    <li>Movies at Home</li>
+                    <li>More</li>
+                    <li>Certified Fresh picks</li>
+                  </ul>
+                </div>
+              </div>
 
-              <li className="hover:bg-white rounded-t hover:text-black cursor-pointer">
+              <div className="hover:bg-white rounded-t hover:text-black cursor-pointer">
                 TV SHOWS
-              </li>
-              <li className="hover:bg-white rounded-t hover:text-black cursor-pointer">
+              </div>
+              <div className="hover:bg-white rounded-t hover:text-black cursor-pointer">
                 MOVIE TRIVIA
-              </li>
-              <li className="hover:bg-white rounded-t hover:text-black cursor-pointer">
+              </div>
+              <div className="hover:bg-white rounded-t hover:text-black cursor-pointer">
                 NEWS
-              </li>
-              <li className="hover:bg-white rounded-t hover:text-black cursor-pointer">
+              </div>
+              <div className="hover:bg-white rounded-t hover:text-black cursor-pointer">
                 SHOWTIMES
-              </li>
-            </ul>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-      {dropdown ? (
-        <div className="w-full bg-white -mt-3 absolute h-2/6">
-          <ul className="flex justify-between">
-            <li>Movies in Theatre</li>
-            <li>Movies at Home</li>
-            <li>More</li>
-            <li>Certified Fresh picks</li>
-          </ul>
-        </div>
-      ) : null}
     </>
   );
 }

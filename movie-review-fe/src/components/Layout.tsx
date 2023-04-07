@@ -7,7 +7,7 @@ type Proptype = {
 
 export default function Layout({ children }: Proptype) {
   return (
-    <div>
+    <div className="bg-white">
       <Header />
       <main>{children}</main>
     </div>

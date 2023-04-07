@@ -13,7 +13,7 @@ type viewerType = {
   meter: number;
 };
 
-interface MovieType {
+export type MovieType = {
   _id: string;
   plot: string;
   genres: string[];
@@ -38,6 +38,4 @@ interface MovieType {
   countries: string[];
   type: string;
   tomatoes: tomatoesType;
-}
-
-export default MovieType;
+};
