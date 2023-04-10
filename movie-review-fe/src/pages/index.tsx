@@ -21,7 +21,7 @@ export default function Home(props: { movies: MovieType[] }): JSX.Element {
           <div className="flex gap-3 flex-wrap justify-between p-3 mx-auto">
             {movies.map((movie: MovieType, index: number) => (
               <div
-                className="flex flex-col justify-between w-1/6 h-1/6"
+                className="flex flex-col justify-between w-1/6 h-1/6 hover:"
                 key={index}
               >
                 <picture>
