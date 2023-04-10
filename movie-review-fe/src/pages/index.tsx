@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export default function Home(props: { movies: MovieType[] }): JSX.Element {
   const { movies } = props;
-  console.log(movies);
+
   return (
     <div className="max-w-5xl mx-auto mt-12">
       <Layout>
@@ -18,15 +18,18 @@ export default function Home(props: { movies: MovieType[] }): JSX.Element {
               VIEW ALL
             </div>
           </div>
-          <div className="flex gap-3 flex-wrap mx-auto">
+          <div className="flex gap-3 flex-wrap justify-between p-3 mx-auto">
             {movies.map((movie: MovieType, index: number) => (
-              <div className=" w-1/6 h-1/6" key={index}>
+              <div
+                className="flex flex-col justify-between w-1/6 h-1/6"
+                key={index}
+              >
                 <picture>
                   <img src={movie.poster} alt="sample" />
                 </picture>
                 <h5>{movie.title}</h5>
                 <Link href={`movies/${movie._id}`} className="m-5">
-                  <div className="w-1/6 h-1/6 bg-white text-black border-1 rounded text-center text-lg">
+                  <div className="bg-slate-400 text-black border-1 rounded text-center text-lg hover:bg-slate-900 hover:text-white">
                     see more
                   </div>
                 </Link>
